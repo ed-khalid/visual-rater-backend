@@ -40,4 +40,5 @@ spotify:
   client:
     id: 793c68b38b06461d8127f90148edc66a
     secret: c5c01048ed994710beb8f400fa676505
-  accounts: 'https://accounts.spotify.com/api/token'
+  accounts: 'https://accounts.spotify.com'
+  api: 'https://api.spotify.com/v1'
