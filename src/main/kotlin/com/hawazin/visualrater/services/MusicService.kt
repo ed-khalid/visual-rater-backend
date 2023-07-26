@@ -88,7 +88,7 @@ class MusicService(private val songRepo: SongRepository, private val albumRepo: 
     @Transactional
     fun createArtist(artistInput: ArtistInput): Artist
     {
-        var artist:Artist = artistInput.let { Artist(id = null, vendorId= it.vendorId,  name= it.name,thumbnail = it.thumbnail, score  = 0.0, metadata = ArtistMetadata(id = null, tier = 0, songs = ArtistSongMetadata(), totalAlbums = 0, totalSongs = 0  ) )   }
+        var artist:Artist = artistInput.let { Artist(id = null, genre=it.genre, vendorId= it.vendorId,  name= it.name,thumbnail = it.thumbnail, score  = 0.0, metadata = ArtistMetadata(id = null, tier = 0, songs = ArtistSongMetadata(), totalAlbums = 0, totalSongs = 0  ) )   }
         return artistRepo.save(artist)
     }
 

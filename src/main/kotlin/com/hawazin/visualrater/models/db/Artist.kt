@@ -11,6 +11,7 @@ data class Artist(
     var id: UUID?,
     var vendorId:String?,
     var name:String,
+    var genre:Genre?,
     var thumbnail:String?,
     @OneToMany(cascade = [CascadeType.REMOVE], fetch = FetchType.LAZY)
     @JoinColumn(name = "artistId")

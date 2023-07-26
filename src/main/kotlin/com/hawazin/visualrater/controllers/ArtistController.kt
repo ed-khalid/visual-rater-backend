@@ -16,6 +16,7 @@ class ArtistController(val musicService: MusicService, val publisherService: Pub
     @QueryMapping
     fun artists() : ArtistPage {
         val artists = musicService.readArtists()
+        // dumb lazy loading
         artists.forEach { it.albums = mutableListOf()  }
         return ArtistPage(total= artists.totalPages, pageNumber = artists.pageable.pageNumber, content = artists.content)
     }
@@ -25,7 +26,7 @@ class ArtistController(val musicService: MusicService, val publisherService: Pub
         val maybeArtist = musicService.readArtistByName(name)
         return if (maybeArtist.isPresent) {
             val artist = maybeArtist.get()
-            return Artist(id= artist.id, vendorId = artist.vendorId, albums = artist.albums, score= artist.score, metadata = artist.metadata, thumbnail =  artist.thumbnail, name=artist.name)
+            return Artist(id= artist.id, vendorId = artist.vendorId, albums = artist.albums, score= artist.score, metadata = artist.metadata, thumbnail =  artist.thumbnail, name=artist.name, genre = artist.genre)
         } else {
             null
         }

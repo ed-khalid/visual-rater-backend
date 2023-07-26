@@ -4,8 +4,8 @@ name:String!
 score:Float
 }
 
-enum ItemType {
-MUSIC
+enum Genre {
+    POP, ROCK, ALTROCK, METAL, RAP, ARABIC_POP, ARABIC_CLASSICAL, LATOM, ELECTRONIC
 }
 
 type Song implements Item {
@@ -60,6 +60,7 @@ type Artist implements Pageable {
     id: String!
     name:String!
     thumbnail: String
+    genre: Genre
     albums:[Album]
     score: Float
     metadata:ArtistMetadata

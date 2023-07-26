@@ -1,6 +1,7 @@
 type Mutation {
     CreateAlbum(album:NewAlbumInput): Album
     CreateArtist(artist:ArtistInput): Artist
+    UpdateArtist(artist:ArtistInput) : Artist
     UpdateSong(song:SongInput) : Song
     DeleteSong(songId:String!) : Boolean
     DeleteAlbum(albumId:String!): Boolean
@@ -33,4 +34,5 @@ input ArtistInput {
     name:String!
     thumbnail:String
     vendorId:String
+    genre:Genre
 }

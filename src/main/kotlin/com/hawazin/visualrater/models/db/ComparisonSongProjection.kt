@@ -9,5 +9,3 @@ interface ComparisonSongProjection{
     val albumDominantColor:String
     val thumbnail: String?
 }
-
-
