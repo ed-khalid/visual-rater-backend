@@ -1,18 +1,10 @@
-interface Item {
-id:String!
-name:String!
-score:Float!
-}
-
-enum ItemType {
-MUSIC
-}
 
 type Song implements Item {
     id:String!
     albumId:String!
     artistId:String!
     score:Float!
+    thumbnail:String
     name: String!
     number:Int!
     discNumber:Int!

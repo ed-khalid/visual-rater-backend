@@ -1,0 +1,54 @@
+
+interface Item {
+    id:String!
+    name:String!
+    thumbnail:String
+    score:Float!
+}
+type Level implements Item {
+    id:String!
+    hierarchyId:String!
+    parentId:String
+    hierarchyLevelOrder:Int!
+    name:String!
+    thumbnail:String
+    children:[Level!]!
+    additionalProperties:String
+    score:Float!
+}
+
+input NewItemInput {
+    name:String!
+    hierarchyId:String!
+    levelId:String!
+    thumbnail:String
+    additionalProperties:String
+    score:Float!
+}
+input UpdateItem {
+    itemId:String!
+    name:String!
+    score:Float!
+    additionalProperties:String
+}
+
+interface Hierarchy {
+    id:String!
+    levels:[String!]!
+}
+input NewHierarchy {
+    name:String!
+    levels:[HierarchyLevel!]!
+}
+input HierarchyLevel {
+    name:String!
+    order:Int!
+    additionalProperties:String
+    isRateable:Boolean
+}
+
+
+
+
+
+

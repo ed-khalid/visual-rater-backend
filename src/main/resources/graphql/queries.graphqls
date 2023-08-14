@@ -2,6 +2,8 @@
 type Query {
     searchExternalArtist(name:String): ExternalArtistSearchResult
     searchExternalAlbumTracks(albumId:String): [ExternalTrackSearchResult!]!
+    hierarchies:[Hierarchy!]!
+    levels(hierarchyId:String!): [Level!]!
     artists: ArtistPage!
     albums(ids:[String!]!): [Album!]
     artist(name:String): Artist

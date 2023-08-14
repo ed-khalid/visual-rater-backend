@@ -1,4 +1,6 @@
 type Mutation {
+    CreateHierarchy(hierarchy:NewHierarchy): Hierarchy
+    CreateItem(item:NewItemInput): Item
     CreateAlbum(album:NewAlbumInput): Album
     CreateArtist(artist:ArtistInput): Artist
     UpdateSong(song:SongInput) : Song
