@@ -30,9 +30,11 @@ dependencies {
     implementation("io.arrow-kt:arrow-fx-coroutines:1.2.0")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-graphql")
+    implementation("io.hypersistence:hypersistence-utils-hibernate-62:3.5.1")
     implementation("org.springframework.boot:spring-boot-starter-websocket")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.fasterxml.jackson.module:jackson-module-jakarta-xmlbind-annotations")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     // db
     runtimeOnly("org.postgresql:postgresql")
